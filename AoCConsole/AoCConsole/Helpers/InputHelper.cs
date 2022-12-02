@@ -19,6 +19,20 @@ namespace AoCConsole.Helpers
             return new List<int>();
         }
 
+        public static List<(string player1, string player2)> ConvertToTuple(this string[] input)
+        {
+            var result = new List<(string player1, string player2)>();
+            foreach (var row in input)
+            {
+                if (row != null)
+                {
+                    var x = row.Split();
+                    result.Add((x[0], x[1]));
+                }
+            }
+            return result;
+        }
+
         public static List<(int index, List<int> group)> ConvertToListGroup(this string[] input)
         {
             var groupedInput = new List<(int index, List<int> group)>();
