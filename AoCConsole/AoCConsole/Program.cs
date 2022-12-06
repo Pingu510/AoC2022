@@ -1,12 +1,14 @@
-﻿namespace AoCConsole;
-class Program
+﻿namespace AoCConsole
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Merry AoC!");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Merry AoC!");
 
-        new Days.Day3();
+            new Days.Day4();
 
-        Console.ReadKey();
+            Console.ReadKey();
+        }
     }
 }

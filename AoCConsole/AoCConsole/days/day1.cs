@@ -28,7 +28,7 @@ namespace AoCConsole.Days
                 elfSum = 0;
             }
 
-            Console.WriteLine("Result: " + highestSum); // 69836
+            Console.WriteLine("Result: " + highestSum);
         }
 
         public void StarTwo(string[] input)
@@ -64,7 +64,7 @@ namespace AoCConsole.Days
             }
 
             var sum = topList[0].sum + topList[1].sum + topList[2].sum;
-            Console.WriteLine("Result: " + sum); // 69836
+            Console.WriteLine("Result: " + sum);
         }
     }
 }

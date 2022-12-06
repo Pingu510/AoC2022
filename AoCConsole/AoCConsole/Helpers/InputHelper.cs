@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AoCConsole.Helpers
+﻿namespace AoCConsole.Helpers
 {
     public static class InputHelper
     {
@@ -19,14 +13,14 @@ namespace AoCConsole.Helpers
             return new Queue<string>(input);
         }
 
-        public static List<(string player1, string player2)> ConvertToTuple(this string[] input)
+        public static List<(string a, string b)> ConvertToTuple(this string[] input, char[] delimiter)
         {
-            var result = new List<(string player1, string player2)>();
+            var result = new List<(string, string)>();
             foreach (var row in input)
             {
                 if (row != null)
                 {
-                    var x = row.Split();
+                    var x = row.Split(delimiter);
                     result.Add((x[0], x[1]));
                 }
             }

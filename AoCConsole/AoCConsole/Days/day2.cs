@@ -28,13 +28,13 @@ namespace AoCConsole.Days
 
         private void StarOne(string[] input)
         {
-            var matches = InputHelper.ConvertToTuple(input);
+            var matches = InputHelper.ConvertToTuple(input, delimiter: new char[] { ' ' });
             var totalScore = 0;
 
             foreach (var round in matches)
             {
-                var p2 = GetMove(round.player2);
-                var matchResult = IsWin(GetMove(round.player1), p2);
+                var p2 = GetMove(round.b);
+                var matchResult = IsWin(GetMove(round.a), p2);
 
                 totalScore += (int)matchResult + (int)p2;
             }
@@ -86,16 +86,16 @@ namespace AoCConsole.Days
         {
             // X = Lose, Y = Draw, Z = Win
 
-            var matches = InputHelper.ConvertToTuple(input);
+            var matches = InputHelper.ConvertToTuple(input, delimiter: new char[] { ' ' });
             var totalScore = 0;
 
             foreach (var round in matches)
             {
-                var p1 = GetMove(round.player1);
+                var p1 = GetMove(round.a);
                 //p2 = ??
                 var matchResult = Score.Loss;
 
-                switch (round.player2)
+                switch (round.b)
                 {
                     case "X":
                         matchResult = Score.Loss;
