@@ -2,24 +2,23 @@
 
 namespace AoCConsole.Days
 {
-    enum Score
-    {
-        Win = 6,
-        Draw = 3,
-        Loss = 0,
-    }
-
-    enum Moves
-    {
-        Rock = 1,
-        Paper = 2,
-        Scissors = 3,
-        Default = 0
-    }
-
-
     public class Day2
     {
+        enum Score
+        {
+            Win = 6,
+            Draw = 3,
+            Loss = 0,
+        }
+
+        enum Moves
+        {
+            Rock = 1,
+            Paper = 2,
+            Scissors = 3,
+            Default = 0
+        }
+
         public Day2()
         {
             StarOne(InputHelper.GetInput("day2.txt"));
