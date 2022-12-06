@@ -2,6 +2,9 @@
 
 namespace AoCConsole.Days
 {
+    /// <summary>
+    /// --- Day 4: Camp Cleanup ---
+    /// </summary>
     internal class Day4
     {
         internal Day4()

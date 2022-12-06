@@ -2,6 +2,9 @@
 
 namespace AoCConsole.Days
 {
+    /// <summary>
+    /// --- Day 1: Calorie Counting ---
+    /// </summary>
     public class Day1
     {
         public Day1()

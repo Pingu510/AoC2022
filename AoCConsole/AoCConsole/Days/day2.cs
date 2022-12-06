@@ -2,6 +2,10 @@
 
 namespace AoCConsole.Days
 {
+    /// <summary>
+    /// --- Day 2: Rock Paper Scissors ---
+    ///             Snack storage
+    /// </summary>
     public class Day2
     {
         enum Score

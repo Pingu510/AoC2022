@@ -1,8 +1,10 @@
 ﻿using AoCConsole.Helpers;
 
-
 namespace AoCConsole.Days
 {
+    /// <summary>
+    /// --- Day 3: Rucksack Reorganization ---
+    /// </summary>
     internal class Day3
     {
         static private List<char> letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToList();

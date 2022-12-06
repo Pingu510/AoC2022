@@ -2,6 +2,9 @@
 
 namespace AoCConsole.Days
 {
+    /// <summary>
+    /// --- Day 5: Supply Stacks ---
+    /// </summary>
     internal class Day5
     {
         internal Day5()
