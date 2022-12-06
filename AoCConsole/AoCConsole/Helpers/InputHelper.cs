@@ -14,9 +14,9 @@ namespace AoCConsole.Helpers
             return File.ReadAllLines(path);
         }
 
-        public static List<int> ConvertToList(this string[] input)
+        public static Queue<string> ConvertToQueue(this string[] input)
         {
-            return new List<int>();
+            return new Queue<string>(input);
         }
 
         public static List<(string player1, string player2)> ConvertToTuple(this string[] input)

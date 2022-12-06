@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AoCConsole.Helpers;
+﻿using AoCConsole.Helpers;
 
 namespace AoCConsole.Days
 {
-    public class day1
+    public class Day1
     {
-        public day1()
+        public Day1()
         {
             StarTwo(InputHelper.GetInput("test.txt"));
-            StarTwo(InputHelper.GetInput("day1_1.txt"));
+            StarTwo(InputHelper.GetInput("day1.txt"));
 
         }
 

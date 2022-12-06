@@ -1,9 +1,4 @@
 ﻿using AoCConsole.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AoCConsole.Days
 {
@@ -23,12 +18,12 @@ namespace AoCConsole.Days
     }
 
 
-    public class day2
+    public class Day2
     {
-        public day2()
+        public Day2()
         {
-            StarOne(InputHelper.GetInput("day2_1.txt"));
-            StarTwo(InputHelper.GetInput("day2_1.txt"));
+            StarOne(InputHelper.GetInput("day2.txt"));
+            StarTwo(InputHelper.GetInput("day2.txt"));
         }
 
         private void StarOne(string[] input)
