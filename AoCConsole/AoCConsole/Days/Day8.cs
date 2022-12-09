@@ -3,15 +3,15 @@
 namespace AoCConsole.Days
 {
     /// <summary>
-    /// prep work
+    /// --- Day 8: Treetop Tree House ---
+    ///         Matrix sightlines
     /// </summary>
     internal class Day8
     {
         internal Day8()
         {
-            StarOne(InputHelper.GetInput("test.txt"));
             StarOne(InputHelper.GetInput("day8.txt"));
-            StarTwo(InputHelper.GetInput("test.txt"));
+            StarTwo(InputHelper.GetInput("day8.txt"));
         }
 
         private void StarOne(string[] input)
@@ -148,10 +148,116 @@ namespace AoCConsole.Days
             return score;
         }
 
+        private int GetMaxScenicScore(List<List<Tree>> trees)
+        {
+            int score = 0;
+            foreach (var row in trees)
+            {
+                foreach (var tree in row)
+                {
+                    score = score < tree.ScenicScore ? tree.ScenicScore : score;
+                }
+            }
+            return score;
+        }
+
+        private void LookHorizontalScenic(List<Tree> trees, (int row, int col) position, Tree potentialTreehouse)
+        {
+            // west
+            for (int i = position.col - 1; 0 <= i; i--)
+            {
+                if (trees[i].Height < potentialTreehouse.Height)
+                {
+                    potentialTreehouse.VisibleTreesWest++;
+                }
+                else
+                {
+                    potentialTreehouse.VisibleTreesWest++;
+                    break;
+                }
+            }
+
+            // east
+            for (int i = position.col + 1; i < trees.Count(); i++)
+            {
+                if (trees[i].Height < potentialTreehouse.Height)
+                {
+                    potentialTreehouse.VisibleTreesEast++;
+                }
+                else
+                {
+                    potentialTreehouse.VisibleTreesEast++;
+                    break;
+                }
+            }
+        }
+
+        private void LookVerticalScenic(List<Tree> trees, (int row, int col) position, Tree potentialTreehouse)
+        {
+            // north
+            for (int i = position.row - 1; 0 <= i; i--)
+            {
+                if (trees[i].Height < potentialTreehouse.Height)
+                {
+                    potentialTreehouse.VisibleTreesNorth++;
+                }
+                else
+                {
+                    potentialTreehouse.VisibleTreesNorth++;
+                    break;
+                }
+            }
+
+            // south
+            for (int i = position.row + 1; i < trees.Count(); i++)
+            {
+                if (trees[i].Height < potentialTreehouse.Height)
+                {
+                    potentialTreehouse.VisibleTreesSouth++;
+                }
+                else
+                {
+                    potentialTreehouse.VisibleTreesSouth++;
+                    break;
+                }
+            }
+        }
+
         private void StarTwo(string[] input)
         {
-            string result = "";
+            var matrix = new List<List<Tree>>();
+            for (int i = 0; i < input.Length; i++)
+            {
+                var row = new List<Tree>();
+                var inputRow = input[i];
+                for (int j = 0; j < inputRow.Length; j++)
+                {
+                    row.Add(new Tree(int.Parse(inputRow[j].ToString())));
+                }
+                matrix.Add(row);
+            }
 
+            var reverseMatrix = new List<List<Tree>>();
+            for (int i = 0; i < matrix.Count; i++)//Column
+            {
+                var treeColumn = new List<Tree>();
+                foreach (var row in matrix)
+                {
+                    treeColumn.Add(row[i]);
+                }
+                reverseMatrix.Add(treeColumn);
+            }
+
+            for (int row = 3; row < matrix[0].Count; row++)
+            {
+                for (int col = 2; col < matrix.Count; col++)
+                {
+                    LookHorizontalScenic(matrix[row], (row, col), matrix[row][col]);
+                    LookVerticalScenic(reverseMatrix[col], (row, col), matrix[row][col]);
+                }
+            }
+
+            int result = GetMaxScenicScore(matrix);
             Console.WriteLine("Result: " + result);
         }
     }
@@ -168,6 +274,16 @@ namespace AoCConsole.Days
         public bool VisibleFromWest { get; set; }
         public bool VisibleFromNorth { get; set; }
         public bool VisibleFromSouth { get; set; }
+
+        public int VisibleTreesEast { get; set; } = 0;
+        public int VisibleTreesWest { get; set; } = 0;
+        public int VisibleTreesNorth { get; set; } = 0;
+        public int VisibleTreesSouth { get; set; } = 0;
+
+        public int ScenicScore => VisibleTreesEast * VisibleTreesWest * VisibleTreesNorth * VisibleTreesSouth;/* (VisibleTreesEast == 0 ? 1 : VisibleTreesEast)
+            * (VisibleTreesWest == 0 ? 1 : VisibleTreesWest)
+            * (VisibleTreesNorth == 0 ? 1 : VisibleTreesNorth)
+            * (VisibleTreesSouth == 0 ? 1 : VisibleTreesSouth);*/
 
         public bool Visible => VisibleFromNorth || VisibleFromSouth || VisibleFromWest || VisibleFromEast;
     }

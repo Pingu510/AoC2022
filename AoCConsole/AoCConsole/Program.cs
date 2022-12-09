@@ -6,7 +6,7 @@
         {
             Console.WriteLine("Merry AoC!");
 
-            _ = new Days.Day8();
+            _ = new Days.Day9();
 
             Console.ReadKey();
         }
