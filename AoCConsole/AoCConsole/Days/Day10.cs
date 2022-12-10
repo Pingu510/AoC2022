@@ -3,7 +3,7 @@
 namespace AoCConsole.Days
 {
     /// <summary>
-    /// prep work
+    /// --- Day 10: Cathode-Ray Tube ---
     /// </summary>
     internal class Day10
     {
@@ -15,7 +15,11 @@ namespace AoCConsole.Days
 
         private void StarOne(string[] input)
         {
+            int cycle = 0;
+            int x = 1;
             string result = "";
+
+            //for
 
             Console.WriteLine("Result: " + result);
         }
