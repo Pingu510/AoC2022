@@ -11,7 +11,6 @@ namespace AoCConsole.Days
         internal Day9()
         {
             StarOne(InputHelper.GetInput("day9.txt"));
-            StarTwo(InputHelper.GetInput("test.txt"));
             StarTwo(InputHelper.GetInput("day9.txt"));
         }
 
@@ -19,7 +18,6 @@ namespace AoCConsole.Days
         {
             var snakeHead = new SnakePosition((0, 0));
             var snakeTail = new SnakePosition((0, 0));
-            snakeTail.Dirty = true;
             var executedTailMoves = new List<(int x, int y)>() { (snakeTail.X, snakeTail.Y) };
 
             foreach (var moves in input)
@@ -41,11 +39,6 @@ namespace AoCConsole.Days
             string result = executedTailMoves.Distinct().Count().ToString();
 
             Console.WriteLine("Result: " + result); // 6011
-        }
-
-        private bool IsConnected()
-        {
-            return false;
         }
 
         private int GetDifference(int head, int tail)
@@ -74,8 +67,7 @@ namespace AoCConsole.Days
                     else if (head.Y < tail.Y) tail.Y--;
                 }
             }
-
-            if (diffY > 1)
+            else if (diffY > 1)
             {
                 if (head.Y > tail.Y) tail.Y++;
                 else if (head.Y < tail.Y) tail.Y--;
@@ -140,7 +132,7 @@ namespace AoCConsole.Days
                 }
             }
 
-            string result = executedTailMoves.Distinct().Count().ToString();
+            string result = executedTailMoves.Distinct().Count().ToString(); //2419
 
             Console.WriteLine("Result: " + result);
         }
@@ -178,6 +170,5 @@ namespace AoCConsole.Days
 
         public int X { get; set; }
         internal int Y { get; set; }
-        internal bool Dirty { get; set; }
     }
 }
