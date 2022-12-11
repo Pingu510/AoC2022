@@ -5,14 +5,14 @@ namespace AoCConsole.Days
     /// <summary>
     /// prep work
     /// </summary>
-    internal class DayPreview
+    internal class Day12
     {
-        internal DayPreview()
+        internal Day12()
         {
-            Console.WriteLine("Day preview:");
+            Console.WriteLine("Day 12:");
 
-            StarOne(InputHelper.GetInput("test.txt")); // answer: preview
-            StarTwo(InputHelper.GetInput("test.txt")); // answer: preview
+            StarOne(InputHelper.GetInput("test.txt")); // answer: 
+            StarTwo(InputHelper.GetInput("test.txt")); // answer: 
         }
 
         private void StarOne(string[] input)

@@ -9,8 +9,10 @@ namespace AoCConsole.Days
     {
         internal Day10()
         {
-            StarOne(InputHelper.GetInput("day10.txt"));
-            StarTwo(InputHelper.GetInput("day10.txt"));
+            Console.WriteLine("Day 10:");
+
+            StarOne(InputHelper.GetInput("day10.txt")); // answer: 11780
+            StarTwo(InputHelper.GetInput("day10.txt")); // answer: PZULBAUA
         }
 
         private void StarOne(string[] input)
@@ -37,7 +39,7 @@ namespace AoCConsole.Days
                 x += command;
             }
 
-            Console.WriteLine("Result: " + result); // 11780
+            Console.WriteLine("Result: " + result);
         }
 
         private void LoadCommands(string[] input, Queue<int> instructions)
@@ -111,7 +113,7 @@ namespace AoCConsole.Days
             }
 
             // draw
-            PrintResult(CRT); // PZULBAUA
+            PrintResult(CRT);
         }
 
         private void PrintResult(List<List<string>> crt)

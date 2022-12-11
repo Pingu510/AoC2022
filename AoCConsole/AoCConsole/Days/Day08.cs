@@ -6,12 +6,14 @@ namespace AoCConsole.Days
     /// --- Day 8: Treetop Tree House ---
     ///         Matrix sightlines
     /// </summary>
-    internal class Day8
+    internal class Day08
     {
-        internal Day8()
+        internal Day08()
         {
-            StarOne(InputHelper.GetInput("day8.txt"));
-            StarTwo(InputHelper.GetInput("day8.txt"));
+            Console.WriteLine("Day 8:");
+
+            StarOne(InputHelper.GetInput("day08.txt")); // answer: 1733
+            StarTwo(InputHelper.GetInput("day08.txt")); // answer: 284648
         }
 
         private void StarOne(string[] input)
@@ -29,7 +31,7 @@ namespace AoCConsole.Days
                 matrix.Add(row);
             }
 
-            for (int i = 0; i < matrix.Count; i++)//Column
+            for (int i = 0; i < matrix.Count; i++) // Column
             {
                 var treeColumn = new List<Tree>();
                 foreach (var row in matrix)
@@ -131,7 +133,7 @@ namespace AoCConsole.Days
         {
             foreach (var tree in trees)
             {
-                tree.VisibleFromNorth = true;//doesnt matter
+                tree.VisibleFromNorth = true; // doesnt matter which
             }
         }
 
@@ -280,10 +282,7 @@ namespace AoCConsole.Days
         public int VisibleTreesNorth { get; set; } = 0;
         public int VisibleTreesSouth { get; set; } = 0;
 
-        public int ScenicScore => VisibleTreesEast * VisibleTreesWest * VisibleTreesNorth * VisibleTreesSouth;/* (VisibleTreesEast == 0 ? 1 : VisibleTreesEast)
-            * (VisibleTreesWest == 0 ? 1 : VisibleTreesWest)
-            * (VisibleTreesNorth == 0 ? 1 : VisibleTreesNorth)
-            * (VisibleTreesSouth == 0 ? 1 : VisibleTreesSouth);*/
+        public int ScenicScore => VisibleTreesEast * VisibleTreesWest * VisibleTreesNorth * VisibleTreesSouth;
 
         public bool Visible => VisibleFromNorth || VisibleFromSouth || VisibleFromWest || VisibleFromEast;
     }

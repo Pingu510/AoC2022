@@ -5,12 +5,14 @@ namespace AoCConsole.Days
     /// <summary>
     /// --- Day 1: Calorie Counting ---
     /// </summary>
-    public class Day1
+    public class Day01
     {
-        public Day1()
+        public Day01()
         {
-            StarTwo(InputHelper.GetInput("test.txt"));
-            StarTwo(InputHelper.GetInput("day1.txt"));
+            Console.WriteLine("Day 1:");
+
+            StarOne(InputHelper.GetInput("day01.txt")); // answer: 69836
+            StarTwo(InputHelper.GetInput("day01.txt")); // answer: 207968
 
         }
 

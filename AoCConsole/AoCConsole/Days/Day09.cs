@@ -6,12 +6,14 @@ namespace AoCConsole.Days
     /// Day 9: Rope Bridge
     ///     Snake?
     /// </summary>
-    internal class Day9
+    internal class Day09
     {
-        internal Day9()
+        internal Day09()
         {
-            StarOne(InputHelper.GetInput("day9.txt"));
-            StarTwo(InputHelper.GetInput("day9.txt"));
+            Console.WriteLine("Day 9:");
+
+            StarOne(InputHelper.GetInput("day09.txt")); // answer: 6011
+            StarTwo(InputHelper.GetInput("day09.txt")); // answer: 2419
         }
 
         private void StarOne(string[] input)
@@ -38,7 +40,7 @@ namespace AoCConsole.Days
 
             string result = executedTailMoves.Distinct().Count().ToString();
 
-            Console.WriteLine("Result: " + result); // 6011
+            Console.WriteLine("Result: " + result);
         }
 
         private int GetDifference(int head, int tail)
@@ -132,7 +134,7 @@ namespace AoCConsole.Days
                 }
             }
 
-            string result = executedTailMoves.Distinct().Count().ToString(); //2419
+            string result = executedTailMoves.Distinct().Count().ToString(); 
 
             Console.WriteLine("Result: " + result);
         }

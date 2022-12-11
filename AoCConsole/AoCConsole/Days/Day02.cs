@@ -6,7 +6,7 @@ namespace AoCConsole.Days
     /// --- Day 2: Rock Paper Scissors ---
     ///             Snack storage
     /// </summary>
-    public class Day2
+    public class Day02
     {
         enum Score
         {
@@ -23,10 +23,12 @@ namespace AoCConsole.Days
             Default = 0
         }
 
-        public Day2()
+        public Day02()
         {
-            StarOne(InputHelper.GetInput("day2.txt"));
-            StarTwo(InputHelper.GetInput("day2.txt"));
+            Console.WriteLine("Day 2:");
+
+            StarOne(InputHelper.GetInput("day02.txt")); // answer: 10718
+            StarTwo(InputHelper.GetInput("day02.txt")); // answer: 14652
         }
 
         private void StarOne(string[] input)

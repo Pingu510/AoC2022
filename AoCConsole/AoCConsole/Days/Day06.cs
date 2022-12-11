@@ -6,12 +6,14 @@ namespace AoCConsole.Days
     /// --- Day 6: Tuning Trouble ---
     ///         Radio Gaga
     /// </summary>
-    internal class Day6
+    internal class Day06
     {
-        internal Day6()
+        internal Day06()
         {
-            StarOne(InputHelper.GetInput("day6.txt"));
-            StarTwo(InputHelper.GetInput("day6.txt"));
+            Console.WriteLine("Day 6:");
+
+            StarOne(InputHelper.GetInput("day06.txt")); // answer: 1598
+            StarTwo(InputHelper.GetInput("day06.txt")); // answer: 2414
         }
 
         private void StarOne(string[] input)

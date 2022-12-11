@@ -5,14 +5,16 @@ namespace AoCConsole.Days
     /// <summary>
     /// --- Day 3: Rucksack Reorganization ---
     /// </summary>
-    internal class Day3
+    internal class Day03
     {
         static private List<char> letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToList();
 
-        internal Day3()
+        internal Day03()
         {
-            StarOne(InputHelper.GetInput("day3.txt"));
-            StarTwo(InputHelper.GetInput("day3.txt"));
+            Console.WriteLine("Day 3:");
+
+            StarOne(InputHelper.GetInput("day03.txt")); // answer: 8088
+            StarTwo(InputHelper.GetInput("day03.txt")); // answer: 2522
         }
 
         private void StarOne(string[] input)
@@ -37,7 +39,6 @@ namespace AoCConsole.Days
         {
             return letters.IndexOf(duplicate) + 1;
         }
-
 
         private void StarTwo(string[] input)
         {

@@ -5,12 +5,14 @@ namespace AoCConsole.Days
     /// <summary>
     /// --- Day 5: Supply Stacks ---
     /// </summary>
-    internal class Day5
+    internal class Day05
     {
-        internal Day5()
+        internal Day05()
         {
-            StarOne(InputHelper.GetInput("day5.txt"));
-            StarTwo(InputHelper.GetInput("day5.txt"));
+            Console.WriteLine("Day 5:");
+
+            StarOne(InputHelper.GetInput("day05.txt")); // answer: MQTPGLLDN
+            StarTwo(InputHelper.GetInput("day05.txt")); // answer: LVZPSTTCZ
         }
 
         private void StarOne(string[] input)

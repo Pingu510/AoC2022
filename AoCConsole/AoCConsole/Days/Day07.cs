@@ -6,15 +6,17 @@ namespace AoCConsole.Days
     /// --- Day 7: No Space Left On Device ---
     ///        Stepping hell part one?
     /// </summary>
-    internal class Day7
+    internal class Day07
     {
         private static int _maxFolderSize = 100000;
         private HashSet<FileModel> _sizedDirs;
 
-        internal Day7()
+        internal Day07()
         {
-            StarOne(InputHelper.GetInput("day7.txt"));
-            StarTwo(InputHelper.GetInput("day7.txt"));
+            Console.WriteLine("Day 7:");
+
+            StarOne(InputHelper.GetInput("day07.txt")); // answer: 1844187
+            StarTwo(InputHelper.GetInput("day07.txt")); // answer: 4978279
         }
 
         private void StarOne(string[] input)
@@ -31,7 +33,7 @@ namespace AoCConsole.Days
             }
 
             Console.WriteLine("Dir count: " + _sizedDirs.Count); // 30
-            Console.WriteLine("Dir sum: " + result); // 1844187
+            Console.WriteLine("Dir sum: " + result);
         }
 
         private FileModel ConstructFileTree(string[] input)
@@ -108,7 +110,7 @@ namespace AoCConsole.Days
             }
             AddSizeToParent(parent.Parent, filesize);
         }
-
+        
         private void StarTwo(string[] input)
         {
             string result = "";
@@ -125,7 +127,7 @@ namespace AoCConsole.Days
 
             var dirToDel = orderdDir.First(x => x.TotalDirSize >= minFolderSize);
 
-            Console.WriteLine("Result: " + dirToDel.TotalDirSize); // 4978279
+            Console.WriteLine("Result: " + dirToDel.TotalDirSize);
         }
     }
 
